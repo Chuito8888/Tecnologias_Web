@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario-Chan</title>
+</head>
+<body>
+    <form action="/mi-pagina-web-con-formulario-lol" method="post">
+        <h1>Formulario-Chan</h1>
+        <p>A continuación rellena con los datos que se te piden pibe</p>
+        <ul>
+            <h2>Identificación del alumno</h2>
+            <li>
+                <label for="name">Nombre completo:</label>
+                <input type="text" required id="name" name="user_name" autocomplete="name minlenght= "5"  />
+            </li>
+            <li>
+                <label for="rut">RUT chileno:</label>
+                <div class="rut-container">
+                    <input type="text" required id="rut" inputmode="numeric" name="user_rut" pattern="[0-9]*" placeholder="12345678" maxlength="8" class="input-rut"/>
+                    <span class="separador">-</span>
+                    <input type="text" required id="rut_dv" name="user_rut_dv" inputmode="text" placeholder="K" maxlength="1" class="input-rut-dv"/>
+                </div>
+            </li>
+            <li>
+                <label for="mail">Correo electrónico:</label>
+                <input type="email" required id="mail" name="user_mail" autocomplete="email" placeholder="tu.correo@ejemplo.com" minlenght="5"  />
+            </li>
+            <li>
+                <label for="phone">Teléfono:</label>
+                <input type="tel" required id="phone" name="user_phone" autocomplete="tel" placeholder="+56912345678"  />
+            </li>
+            <h2>Datos académicos</h2>
+            <li>
+                <label for="career">Carrera/Programa:</label>
+                <select id="career" name="user_career" required>
+                    <option value="" disbled selected>Selecciona una opción...</option>
+                    
+                    <option value="Ing-informática">Ingeniería civil en informática</option>
+                    <option value="Ing-minas">Ingeniería civil en minas</option>
+                    <option value="Ing-aura">Ingeniería civil en aura</option>
+                    <option value="Ing-comercial">Ingeniería comercial</option>
+                </select>
+            </li>
+            <li>
+                <label for="jornada-diurna">
+                    <input type="radio" id="jornada-diurna" name="jornada" value="diurna">Jornada diurna
+                </label>
+                
+                <label for="jornada-vespertina">
+                    <input type="radio" id="jornada-vespertina" name="jornada" value="vepestirna">Jornada vespertina
+                </label>
+            </li>
+            <li>
+                <label for="city">Sede o Ciudad:</label>
+                <select id="city" name="user_city" required>
+                    <option value="" disabled selected>Seleccione una opción...</option>
+
+                    <option value="C-PM">Chinquihue-Puerto Montt</option>
+                    <option value="PI-PM">Presidente Ibañez-Puerto Montt</option>
+                    <option value="O">Osorno</option>
+                    <option value="C">Chiloé</option>
+                </select>
+            </li>
+            <li>
+                <label for="terms"> 
+                    <input type="checkbox" id="terms" name="acepta_terminos" value="si" required>Acepto los términos y condiciones
+                </label> 
+            </li>
+        </ul>
+        <button type="reset">Borrar formulario</button>
+        <button type="submit">Enviar formulario</button>
+    </form>
+</body>
+</html>
