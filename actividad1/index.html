@@ -1,24 +1,39 @@
 <!doctype html>
 <html lang="en">
+<!--Voy a dejarme comentarios para explicarme a mi mismo mi cochinada -->
+<!--El head es todo lo externo a la pagina como el logo, nombre de la pestaña y así-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario-Chan</title>
+    <!--Link se usa para conectar con el archivo style.css que le dará estética a la página -->
+    <link rel="stylesheet" href="style.css">
 </head>
+<!--Body es todo el cuerpo de la página, aquí se hace todo el contenido -->
 <body>
-    <form action="/mi-pagina-web-con-formulario-lol" method="post">
+    <!--form inicia un formulario, que al terminarlo me llevará a la página done.html -->
+    <form action="done.html" method="get">
+        <!--h1 sirve para titulos, h2 se usa para subtitulos y p me permite escribir texto -->
         <h1>Formulario-Chan</h1>
         <p>A continuación rellena con los datos que se te piden pibe</p>
+        <!--ul sirve para iniciar una lista, cada linea se separa con li, es importante recordar poner texto y titulos dentro de cada li y no fuera -->
         <ul>
-            <h2>Identificación del alumno</h2>
             <li>
+                <h2>Identificación del alumno</h2> 
+            </li>
+            <li>
+                <!--se pueden marcar los campos como obligatorios usando required -->
+                <!-- se puede usar autocomplete para mostrar sugerencias según el campo-->
+                <!--maxlength y minlength hacen lo que piensas que hacen -->
+                <!--inputmode puede filtrar el tipo de dato que se va a ingresar, placeholder deja un texto de ejemplo en los campos -->
+                <!-- placeholder sirve para poner texto dentro de los campos, útil para indicar cómo se insertan los datos -->
                 <label for="name">Nombre completo:</label>
-                <input type="text" required id="name" name="user_name" autocomplete="name minlenght= "5"  />
+                <input type="text" required id="name" name="user_name" autocomplete="name" minlength= "5"  />
             </li>
             <li>
                 <label for="rut">RUT chileno:</label>
                 <div class="rut-container">
-                    <input type="text" required id="rut" inputmode="numeric" name="user_rut" pattern="[0-9]*" placeholder="12345678" maxlength="8" class="input-rut"/>
+                    <input type="text" required id="rut" inputmode="numeric" name="user_rut" pattern="[0-9]*" placeholder="12345678" minlength="7" maxlength="8" class="input-rut"/>
                     <span class="separador">-</span>
                     <input type="text" required id="rut_dv" name="user_rut_dv" inputmode="text" placeholder="K" maxlength="1" class="input-rut-dv"/>
                 </div>
@@ -31,11 +46,15 @@
                 <label for="phone">Teléfono:</label>
                 <input type="tel" required id="phone" name="user_phone" autocomplete="tel" placeholder="+56912345678"  />
             </li>
-            <h2>Datos académicos</h2>
+
             <li>
+                <h2>Datos académicos</h2> 
+            </li>
+            <li>
+                <!--select sirve para abrir una pestaña con distintas opciones, siempre dejar una opcion vacia para obligar al usuario a elegir -->
                 <label for="career">Carrera/Programa:</label>
                 <select id="career" name="user_career" required>
-                    <option value="" disbled selected>Selecciona una opción...</option>
+                    <option value="" disabled selected>Selecciona una opción...</option>
                     
                     <option value="Ing-informática">Ingeniería civil en informática</option>
                     <option value="Ing-minas">Ingeniería civil en minas</option>
@@ -44,6 +63,8 @@
                 </select>
             </li>
             <li>
+                <!--Radio permite elegir entre distintas casillas de opciones y guardarlas bajo un mismo tipo de dato -->
+                <!--Si se marca una, se desmarcan las otras -->
                 <label for="jornada-diurna">
                     <input type="radio" id="jornada-diurna" name="jornada" value="diurna">Jornada diurna
                 </label>
@@ -64,12 +85,15 @@
                 </select>
             </li>
             <li>
+                <!--checkbox es util para casillas como las de aceptar terminos -->
                 <label for="terms"> 
                     <input type="checkbox" id="terms" name="acepta_terminos" value="si" required>Acepto los términos y condiciones
                 </label> 
             </li>
         </ul>
+        <!--reset borra todos los campos rellenados -->
         <button type="reset">Borrar formulario</button>
+        <!--submit finalmente envia el formulario -->
         <button type="submit">Enviar formulario</button>
     </form>
 </body>

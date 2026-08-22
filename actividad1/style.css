@@ -1,0 +1,65 @@
+/* Primero debo definir variables globales para los colores y estilos que se usarán en todo el sitio web. Esto facilita la personalización y el mantenimiento del código CSS. */
+/* Si quiero cambiar el color solo vengo aquí y lo cambio*/
+:root {
+    --bg-color: #c4fefb;
+    --card-color: #ffffff;
+    --text-color: #2c3e50;
+    --primary-color: #2563eb;
+}
+
+/* 2. Reset básico */
+/*Esto aparentemente ayuda a que todos los navegadores tengan un estilo base similar, eliminando márgenes y paddings predeterminados.*/
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Estilos generales del body */
+/*El body es el contenedor principal de todo el contenido de la página
+aquí defino la fuente, color del fondo, color del texto y la altura de línea para mejorar la legibilidad.*/
+body {
+    font-family: 'Arial', sans-serif; /*Fuente del sitio web*/
+    background-color: var(--bg-color); /*Color del fondo*/
+    color: var(--text-color); /*Color del texto*/
+    line-height: 1.6; /*Altura de línea para mejorar la legibilidad*/
+    display: flex;
+    justify-content:center; /*Centrar el contenido horizontalmente*/
+    padding: 40px 20px;
+}
+
+form {
+    background-color: var(--card-color); /*Selecciono el color de la card definida como variable*/
+    max-width: 650px; /*Ancho máximo del formulario*/
+    width: 100%; /*El formulario ocupará el 100% del ancho disponible hasta un máximo de 650px*/
+    padding: 32px; /*Ayuda a que el texto no quede pegado a los bordes*/
+    border-radius: 12px; /*Bordes redondeados para un diseño más amigable*/
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /*Sombra para dar profundidad al formulario*/
+}
+
+ul {
+    list-style: none; /*Elimino los puntos de las listas*/
+    margin-bottom: 20px; /*Espacio debajo de la lista*/
+}
+
+label{
+    display: block; /*Hago que el label ocupe toda la línea y el input baja automaticamente*/
+    margin-bottom: 6px; /*Espacio debajo del label*/
+    font-weight: 600; /*Texto en ligera negrita para resaltar el label*/
+}
+
+rut-container{
+    display: flex; /*Hago que el contenedor del rut y el dígito verificador estén en línea*/
+    align-items: center; /*Alineo verticalmente los elementos dentro del contenedor*/
+    gap: 8px; /*Espacio entre el input del rut y el dígito verificador*/
+}
+
+input-rut{
+    flex: 1; /*El input del rut ocupa todo el espacio disponible dentro del contenedor*/
+}
+
+input-rut-dv{
+    width: 60px; /*Ancho fijo para el dígito verificador*/
+    text-align: center; /*Texto centrado dentro del input del dígito verificador*/
+}
+
